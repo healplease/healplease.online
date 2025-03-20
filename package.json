@@ -13,11 +13,13 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "radix-vue": "^1.9.17",
+    "@primeuix/themes": "^1.0.0",
+    "primevue": "^4.3.2",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@primevue/auto-import-resolver": "^4.3.2",
     "@tsconfig/node22": "^22.0.0",
     "@types/node": "^22.13.9",
     "@vitejs/plugin-vue": "^5.2.1",
