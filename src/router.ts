@@ -5,12 +5,12 @@ import About from '@/pages/About.vue'
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/about', component: About }
+  { path: '/about', component: About },
 ]
 
 const router = createRouter({
   history: createMemoryHistory(),
-  routes
+  routes,
 })
 
 export default router

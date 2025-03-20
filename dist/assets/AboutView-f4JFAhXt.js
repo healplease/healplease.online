@@ -1,1 +1,0 @@
-import{_ as o,c as t,a,o as n}from"./index-Qd7_t1I-.js";const s={name:"AboutView"};function r(c,e,u,l,p,i){return n(),t("div",null,e[0]||(e[0]=[a("h1",null,"about",-1)]))}const d=o(s,[["render",r]]);export{d as default};
