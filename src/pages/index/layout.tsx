@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
 
-import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 
+import bg1920 from "@/assets/img/bg1920.png";
 
 const AppLayout = () => {
   return (
@@ -12,12 +12,11 @@ const AppLayout = () => {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
-        backgroundColor: (theme) => theme.palette.background.default,
+        backgroundImage: `url(${bg1920})`,
+        backgroundSize: "cover",
       }}
     >
-      <Container maxWidth="lg" sx={{ padding: 2 }}>
-        <Outlet />
-      </Container>
+      <Outlet />
     </Box>
   );
 };
