@@ -7,9 +7,9 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import CSSBaseline from "@mui/material/CssBaseline";
 
-import { store } from "@/app/store";
-import { router } from "@/app/router";
-import { theme } from "@/app/theme";
+import { store } from "./store";
+import { router } from "./router";
+import { theme } from "./theme";
 
 import "./globals.css";
 
