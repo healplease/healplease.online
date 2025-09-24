@@ -11,6 +11,9 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --fix"
   },
+  "engines": {
+    "node": ">=23.0.0"
+  },
   "dependencies": {
     "@fontsource/roboto": "5.2.7",
     "@mdi/font": "7.4.47",
