@@ -12,7 +12,7 @@
     "lint": "eslint . --fix"
   },
   "engines": {
-    "node": ">=23.0.0"
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "@fontsource/roboto": "5.2.7",
