@@ -52,7 +52,8 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm build
-      - name: Build And Deploy
+      # Deploy to Azure Static Web App
+      - name: Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
@@ -65,6 +66,7 @@ jobs:
           api_location: ${{ env.API_LOCATION }}
           app_artifact_location: ${{ env.APP_ARTIFACT_LOCATION }}
           skip_deploy_on_missing_secrets: true
+          skip_app_build: true
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
