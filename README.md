@@ -1,65 +1,81 @@
-# Vehicle Damage Detection — Setup Guide
+# Vuetify (Default)
 
-This app uses FastAPI + Torchvision on the backend and Vue.js on the frontend to detect vehicle damage from images.
-The backend leverages pre-trained models and public datasets to identify damage like dents, scratches, and more.
+This is the official scaffolding tool for Vuetify, designed to give you a head start in building your new Vuetify application. It sets up a base template with all the necessary configurations and standard directory structure, enabling you to begin development without the hassle of setting up the project from scratch.
 
-## Prerequisites
+## ❗️ Important Links
 
-  - Docker & docker-compose to run the app loaclly
-  - [Kaggle](https://www.kaggle.com/) account for datasets
+- 📄 [Docs](https://vuetifyjs.com/)
+- 🚨 [Issues](https://issues.vuetifyjs.com/)
+- 🏬 [Store](https://store.vuetifyjs.com/)
+- 🎮 [Playground](https://play.vuetifyjs.com/)
+- 💬 [Discord](https://community.vuetifyjs.com)
 
-## 1. Set Up Kaggle API Access
+## 💿 Install
 
-- Go to your [Kaggle Account Settings](https://www.kaggle.com/settings).
-- Click "Create New API Token" — this downloads `kaggle.json`.
-- Move the file to the default path for your OS:
+Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
 
-      # (PowerShell)
-      mkdir $env:USERPROFILE\.kaggle
-      move .\kaggle.json $env:USERPROFILE\.kaggle\
+| Package Manager                                                | Command        |
+|---------------------------------------------------------------|----------------|
+| [yarn](https://yarnpkg.com/getting-started)                   | `yarn install` |
+| [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)     | `npm install`  |
+| [pnpm](https://pnpm.io/installation)                          | `pnpm install` |
+| [bun](https://bun.sh/#getting-started)                        | `bun install`  |
 
-      # (Bash)
-      mkdir ~/.kaggle
-      mv .\kaggle.json ~/.kaggle
+After completing the installation, your environment is ready for Vuetify development.
 
-## 2. Download datasets
+## ✨ Features
 
-  I'll probably automate this with a `docker-compose run download` command later.
+- 🖼️ **Optimized Front-End Stack**: Leverage the latest Vue 3 and Vuetify 3 for a modern, reactive UI development experience. [Vue 3](https://v3.vuejs.org/) | [Vuetify 3](https://vuetifyjs.com/en/)
+- 🗃️ **State Management**: Integrated with [Pinia](https://pinia.vuejs.org/), the intuitive, modular state management solution for Vue.
+- 🚦 **Routing and Layouts**: Utilizes Vue Router for SPA navigation and vite-plugin-vue-layouts-next for organizing Vue file layouts. [Vue Router](https://router.vuejs.org/) | [vite-plugin-vue-layouts-next](https://github.com/loicduong/vite-plugin-vue-layouts-next)
+- 💻 **Enhanced Development Experience**: Benefit from TypeScript's static type checking and the ESLint plugin suite for Vue, ensuring code quality and consistency. [TypeScript](https://www.typescriptlang.org/) | [ESLint Plugin Vue](https://eslint.vuejs.org/)
+- ⚡ **Next-Gen Tooling**: Powered by Vite, experience fast cold starts and instant HMR (Hot Module Replacement). [Vite](https://vitejs.dev/)
+- 🧩 **Automated Component Importing**: Streamline your workflow with unplugin-vue-components, automatically importing components as you use them. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
+- 🛠️ **Strongly-Typed Vue**: Use vue-tsc for type-checking your Vue components, and enjoy a robust development experience. [vue-tsc](https://github.com/johnsoncodehk/volar/tree/master/packages/vue-tsc)
 
-    cd ./backend
-    mkdir datasets
+These features are curated to provide a seamless development experience from setup to deployment, ensuring that your Vuetify application is both powerful and maintainable.
 
-    # Download datasets
-    kaggle datasets download -d hendrichscullen/vehide-dataset-automatic-vehicle-damage-detection
-    kaggle datasets download -d hamzamanssor/car-damage-assessment
-    kaggle datasets download -d rickyyyyyyy/torchvision-stanford-cars
+## 💡 Usage
 
-    # (PowerShell) Extract into folders
-    Expand-Archive vehide-dataset-automatic-vehicle-damage-detection.zip -DestinationPath datasets/VehiDE
-    Expand-Archive car-damage-assessment.zip -DestinationPath datasets/CarDamage
-    Expand-Archive torchvision-stanford-cars.zip -DestinationPath datasets/StanfordCars
+This section covers how to start the development server and build your project for production.
 
-    # (Bash) Extract into folders
-    unzip vehide-dataset-automatic-vehicle-damage-detection.zip -d datasets/VehiDE
-    unzip car-damage-assessment.zip -d datasets/CarDamage
-    unzip torchvision-stanford-cars.zip -d datasets/StanfordCars
+### Starting the Development Server
 
-After extraction you can remove the zip files.
+To start the development server with hot-reload, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000):
 
-## 3. Train the Models
+```bash
+yarn dev
+```
 
-    docker-compose run train
+(Repeat for npm, pnpm, and bun with respective commands.)
 
-## 4. Validate the Models
+> Add NODE_OPTIONS='--no-warnings' to suppress the JSON import warnings that happen as part of the Vuetify import mapping. If you are on Node [v21.3.0](https://nodejs.org/en/blog/release/v21.3.0) or higher, you can change this to NODE_OPTIONS='--disable-warning=5401'. If you don't mind the warning, you can remove this from your package.json dev script.
 
-    docker-compose run validate
+### Building for Production
 
-## 5. Build & Run the container
+To build your project for production, use:
 
-    docker-compose build
-    docker-compose up
+```bash
+yarn build
+```
 
-Backend (FastAPI) is accessible on http://localhost:8000 (OpenAPI docs on http://localhost:8000/docs).
+(Repeat for npm, pnpm, and bun with respective commands.)
 
-Frontend (Vue.js) is accessible on http://localhost:3000.
+Once the build process is completed, your application will be ready for deployment in a production environment.
 
+## 💪 Support Vuetify Development
+
+This project is built with [Vuetify](https://vuetifyjs.com/en/), a UI Library with a comprehensive collection of Vue components. Vuetify is an MIT licensed Open Source project that has been made possible due to the generous contributions by our [sponsors and backers](https://vuetifyjs.com/introduction/sponsors-and-backers/). If you are interested in supporting this project, please consider:
+
+- [Requesting Enterprise Support](https://support.vuetifyjs.com/)
+- [Sponsoring John on Github](https://github.com/users/johnleider/sponsorship)
+- [Sponsoring Kael on Github](https://github.com/users/kaelwd/sponsorship)
+- [Supporting the team on Open Collective](https://opencollective.com/vuetify)
+- [Becoming a sponsor on Patreon](https://www.patreon.com/vuetify)
+- [Becoming a subscriber on Tidelift](https://tidelift.com/subscription/npm/vuetify)
+- [Making a one-time donation with Paypal](https://paypal.me/vuetify)
+
+## 📑 License
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2016-present Vuetify, LLC
